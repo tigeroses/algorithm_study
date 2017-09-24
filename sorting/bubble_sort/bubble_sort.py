@@ -6,15 +6,22 @@ import unittest
 import pygorithm.sorting
 
 def bubble_sort(l):
+    while True:
+        try:
+            l = bubble_sort_iter(l).next()
+        except StopIteration:
+            return l
+
+def bubble_sort_iter(l):
     length = len(l)
     if length <= 1:
-        return l
+        yield l
 
     for i in xrange(length):
         for j in xrange(i+1, length):
             if l[i] > l[j]:
                 l[i], l[j] = l[j], l[i]
-    return l
+                yield l
 
 class BubbleSortTestCase(unittest.TestCase):
     def setUp(self):

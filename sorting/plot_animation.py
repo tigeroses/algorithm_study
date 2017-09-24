@@ -65,7 +65,9 @@ def dynamic_sorting_figure(d, gen_data):
     def animate(i):
         # simulate new data coming in
         try:
-            data = gen_data(d).next()
+            #data = gen_data(d).next()
+            data = gen_data.next()
+            #print data
         except StopIteration:
             return [patch, ]
 
@@ -81,6 +83,7 @@ def dynamic_sorting_figure(d, gen_data):
 if __name__ == '__main__':
     d = [1,2,3,4,5]
     def gen_data():
-        yield np.random.randn(5)
+        while True:
+            yield np.random.randn(5)
 
-    dynamic_sorting_figure(d, gen_data)
+    dynamic_sorting_figure(d, gen_data())

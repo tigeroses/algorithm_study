@@ -6,9 +6,10 @@ import unittest
 import pygorithm.sorting
 
 def bubble_sort(l):
+    it = bubble_sort_iter(l)
     while True:
         try:
-            l = bubble_sort_iter(l).next()
+            l = it.next()
         except StopIteration:
             return l
 

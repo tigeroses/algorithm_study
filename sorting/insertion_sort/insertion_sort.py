@@ -31,13 +31,13 @@ def insertion_sort_iter(l):
 
 class InsertionSortTestCase(unittest.TestCase):
     def setUp(self):
-        self.raw_list = [1,3,2,6,5]
+        self.raw_list = [6,5,4,3,2,1]
 
     def test_my(self):
-        assert insertion_sort(self.raw_list) == [1,2,3,5,6]
+        assert insertion_sort(self.raw_list) == [1,2,3,4,5,6]
 
     def test_lib(self):
-        assert pygorithm.sorting.insertion_sort.sort(self.raw_list) == [1,2,3,5,6]
+        assert pygorithm.sorting.insertion_sort.sort(self.raw_list) == [1,2,3,4,5,6]
 
 
 

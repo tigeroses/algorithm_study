@@ -6,12 +6,17 @@ from plot_animation import dynamic_sorting_figure
 
 from bubble_sort.bubble_sort import bubble_sort_iter
 from insertion_sort.insertion_sort import insertion_sort_iter
+# for quick sort
+from shell_sort.shell_sort import shell_sort_iter
 
 def bubble_sort_figure(data):
     dynamic_sorting_figure(data, bubble_sort_iter(data))
 
 def insertion_sort_figure(data):
     dynamic_sorting_figure(data, insertion_sort_iter(data))
+
+def shell_sort_figure(data):
+    dynamic_sorting_figure(data, shell_sort_iter(data))
 
 if __name__ == '__main__':
     data = create_data(l=20, min_v=1, max_v=100)
@@ -20,4 +25,9 @@ if __name__ == '__main__':
     # bubble_sort_figure(data)
 
     # 2 insertion sort
-    insertion_sort_figure(data)
+    # insertion_sort_figure(data)
+
+    # 3 quick sort
+
+    # 4 shell sort
+    shell_sort_figure(data)
